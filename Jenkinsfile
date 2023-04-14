@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        sh '/usr/bin/ansible-playbook playbook.yml --ask-become-pass'
+        sh '/usr/bin/ansible-playbook playbook.yml'
       }
     }
   }
