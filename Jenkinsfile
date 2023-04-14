@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        sh '/usr/bin/ansible-playbook playbook.yml --extra-vars "ansible_user=zsila ansible_password=yiga123"'
+        sh '/usr/bin/ansible-playbook playbook.yml --ask-become-pass'
       }
     }
   }
