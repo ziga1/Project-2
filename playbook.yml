@@ -1,8 +1,11 @@
 ---
-- name: Copy index.html to remote server
-  hosts: your_vm_hostname
+- name: Deploy web server
+  hosts: all
+  become: true
   tasks:
-    - name: Copy index.html to remote server
+    - name: Install Apache web server
+      apt: name=apache2 state=present
+    - name: Copy index.html file
       copy:
-        src: /path/to/local/index.html
-        dest: /var/www/html/index.html
+        src: index.html
+        dest: /var/www/html/
