@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Ansible version') {
+    stage('Deploy') {
       steps {
-        sh 'ansible-playbook --version'
+        sh '/usr/bin/ansible-playbook playbook.yml'
       }
     }
   }
