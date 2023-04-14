@@ -1,15 +1,14 @@
 ---
-- name: Install Apache/Nginx and copy index.html
+- name: Install Apache and copy index.html
   hosts: all
   become: true
   tasks:
-    - name: Install Apache/Nginx
+    - name: Install Apache
       apt:
         name: "{{ item }}"
         state: present
       with_items:
         - apache2
-        - nginx
 
     - name: Copy index.html
       copy:
