@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'sudo apt update'
                 sh 'sudo apt install -y apache2'
-                sh 'sudo git clone https://github.com/ziga1/https://github.com/ziga1/Project-2 /var/www/html'
+                sh 'sudo git clone https://github.com/ziga1/Project-2.git /var/www/html'
             }
         }
     }
