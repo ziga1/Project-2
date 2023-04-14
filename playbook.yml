@@ -1,11 +1,17 @@
 ---
-- name: Deploy web server
+- name: Install Apache/Nginx and copy index.html
   hosts: all
   become: true
   tasks:
-    - name: Install Apache web server
-      apt: name=apache2 state=present
-    - name: Copy index.html file
+    - name: Install Apache/Nginx
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - apache2
+        - nginx
+
+    - name: Copy index.html
       copy:
         src: index.html
-        dest: /var
+        dest: /var/www/html/index.html
