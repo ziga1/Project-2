@@ -1,7 +1,6 @@
 ---
 - name: Install Apache and copy index.html
   hosts: 192.168.8.133
-  remote_user: zsila
   become: true
   tasks:
     - name: Install Apache
