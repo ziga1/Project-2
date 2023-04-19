@@ -1,6 +1,6 @@
 ---
 - name: Install Apache and copy index.html
-  hosts: all
+  hosts: 192.168.8.133
   become: true
   tasks:
     - name: Install Apache
